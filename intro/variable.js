@@ -39,6 +39,53 @@ console.log(prenom)
 
 
 
+// Boxing
+// C'est le processure par lequel une valeur primitive (nombre, chaîne, booléen,....)
+// est temporairement convertie en un objet afin de permettre l'utilisation de méthode
+
+// Boxing sur les nombres (utilise la Classe Number)
+
+let nombre = 20
+
+let resultat = nombre.toFixed(2)
+
+console.log(resultat)
+
+//Boxing sur les chaînes (utilise la Classe String)
+
+let str = "hello"
+
+console.log(str.toUpperCase())
+
+let str2 = new String("hello")
+
+
+//Concaténation de chaînes (opérateur +)
+
+let ch1 = "Bonjour"
+let ch2 = "tout le monde !"
+
+let message = ch1 + " " + ch2
+
+console.log(message)
+
+ch1 = "3"
+ch2 = "7"
+message = ch1 + ch2
+console.log(message)
+
+
+
+// Template litérale `` (backsticks Alt Gr + 7)
+
+let nom = "Pierre"
+let age = 30
+
+let presentation = `Je m'appelle ${nom} et j'ai ${age} ans`
+
+console.log(presentation)
+
+
 
 
 
