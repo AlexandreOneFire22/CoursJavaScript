@@ -37,6 +37,32 @@ console.log(tab)
 
 
 
+// Parcourir un tableau
+
+// Boucle for "classique"
+
+for (let i=0;i<tab.length; i++) {
+    console.log(tab[i])
+}
+
+
+//Boucle for...of
+
+for (let nombre of tab){
+    console.log(nombre)
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
