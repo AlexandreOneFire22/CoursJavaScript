@@ -109,11 +109,12 @@ console.log(personnes.reduce((personnePlusAgee,personne) => {
 console.log("____________________________________________________________________________________________")
 console.log("Lister les prénoms triés par ordre alphabétique")
 
-console.log(personnes.map(personne => personne.prenom).sort())
 
+console.log(personnes.map(personne => personne.prenom).sort())
 
 console.log("____________________________________________________________________________________________")
 console.log("Compter le nombre de mineurs et de majeurs")
+
 
 let nombrePersonneMineurs = personnes.map(personne => personne.age).filter(age => age<18).length
 
@@ -121,11 +122,9 @@ console.log(`nombre de personnes mineurs = ${nombrePersonneMineurs}`)
 console.log(`nombre de personnes majeurs = ${personnes.length - nombrePersonneMineurs}`)
 
 
-
 console.log("____________________________________________________________________________________________")
 console.log("Vérifier si tout le monde est majeur")
 
-//console.log(personnes.map(personne => personne.age>=18).reduce((somme, actuelle) => somme + actuelle))
 
 console.log(personnes.filter(personne => personne.age >= 18).length ===personnes.length)
 
@@ -133,10 +132,12 @@ console.log(personnes.filter(personne => personne.age >= 18).length ===personnes
 console.log("____________________________________________________________________________________________")
 console.log("Rechercher une personne par prénom")
 
+
 console.log(personnes.find(personne => personne.prenom === "Ethan"))
 
 console.log("____________________________________________________________________________________________")
 console.log("Supprimer une personne spécifique par son nom")
+
 
 personnes = personnes.filter((personne) => personne.nom !== "Martin")
 
@@ -145,6 +146,7 @@ console.log(personnes)
 
 console.log("____________________________________________________________________________________________")
 console.log("Trouver l'âge moyen des personnes majeures")
+
 
 let listeAgePersonneMajeur = personnes.map(personne => personne.age).filter(age => age>=18)
 
