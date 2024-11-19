@@ -33,7 +33,7 @@ console.log(personne1.prenoms[0])
 
 // Combiner les objets et les tableaux
 
-const personnes = [
+let personnes = [
     {prenom : "Jean", nom : "Dupond", age : 50},
     {prenom : "Pierre", nom : "Martin", age : 45},
     {prenom : "Ethan", nom : "Boileau", age : 17}
@@ -83,6 +83,83 @@ personnes.push({prenom : "Alexandre",nom : "Gauthier",  age : 19})
 
 
 console.log(personnes)
+
+
+
+
+
+
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Trouver la personne la plus âgée (renvoie l'objet)")
+
+//let ageVieux = personnes.map(personne => personne.age).sort()[personnes.length-1]
+//console.log(personnes.find(personne => personne.age === ageVieux))
+
+console.log(personnes.reduce((personnePlusAgee,personne) => {
+    if (personne.age > personnePlusAgee.age){
+        return personne
+    }
+    return personnePlusAgee
+},personnes[0]))
+
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Lister les prénoms triés par ordre alphabétique")
+
+console.log(personnes.map(personne => personne.prenom).sort())
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Compter le nombre de mineurs et de majeurs")
+
+let nombrePersonneMineurs = personnes.map(personne => personne.age).filter(age => age<18).length
+
+console.log(`nombre de personnes mineurs = ${nombrePersonneMineurs}`)
+console.log(`nombre de personnes majeurs = ${personnes.length - nombrePersonneMineurs}`)
+
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Vérifier si tout le monde est majeur")
+
+//console.log(personnes.map(personne => personne.age>=18).reduce((somme, actuelle) => somme + actuelle))
+
+console.log(personnes.filter(personne => personne.age >= 18).length ===personnes.length)
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Rechercher une personne par prénom")
+
+console.log(personnes.find(personne => personne.prenom === "Ethan"))
+
+console.log("____________________________________________________________________________________________")
+console.log("Supprimer une personne spécifique par son nom")
+
+personnes = personnes.filter((personne) => personne.nom !== "Martin")
+
+console.log(personnes)
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Trouver l'âge moyen des personnes majeures")
+
+let listeAgePersonneMajeur = personnes.map(personne => personne.age).filter(age => age>=18)
+
+console.log(listeAgePersonneMajeur.reduce((somme, age) => somme + age, 0 )/listeAgePersonneMajeur.length)
+
+
+console.log("____________________________________________________________________________________________")
+console.log("Vérifié si au moins une personne a un prénom commençant par 'J' ")
+
+
+console.log(personnes.filter(personne => personne.prenom.startsWith("J")).length>=1)
+
+
+
+
 
 
 
