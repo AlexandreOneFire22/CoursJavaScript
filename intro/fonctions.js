@@ -143,6 +143,61 @@ nombres
 
 
 
+console.log("______________________________")
+console.log("Puisssance 2 :")
+
+
+
+// Récupérer dans un tableau tous les nombre à la puissance 2 et les afficher
+
+const nombresPuissance2 = []
+
+for (const nombre of nombres) {
+    nombresPuissance2.push(nombre**2)
+}
+
+nombresPuissance2.forEach(nombre=>console.log(nombre))
+
+
+//mieux
+
+
+console.log("______________________________")
+
+nombres.map(nombre=> nombre ** 2)
+    .forEach(nombre=>console.log(nombre))
+
+
+console.log("exemple sur des prixHT :")
+
+// Exemple
+
+const prixHT = [15,18,26,89,75,125]
+
+//Afficher tous les prix TTC supérieurs à 100 euros avec une TVA à 20%.
+
+prixHT.map(prix=>prix * 1.20)
+    .filter(prix => prix>100)
+    .forEach(prix =>console.log(prix))
+
+
+console.log(prixHT)
+
+
+//Calculer et afficher la somme des prix TTC
+
+console.log("Calculer et afficher la somme des prix TTC :")
+
+
+console.log(prixHT.map(prix=>prix * 1.20)
+    .reduce((somme, prixTTC) => somme + prixTTC, 0 ))
+//     accumulator, currentValue
+
+// Fonction de callBack = une fonction qui est pris en paramètre dans une autre, celle-ci sera appélé pour chaque élément
+
+
+
+
 
 
 
