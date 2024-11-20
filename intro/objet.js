@@ -118,8 +118,24 @@ console.log("Compter le nombre de mineurs et de majeurs")
 
 let nombrePersonneMineurs = personnes.map(personne => personne.age).filter(age => age<18).length
 
-console.log(`nombre de personnes mineurs = ${nombrePersonneMineurs}`)
-console.log(`nombre de personnes majeurs = ${personnes.length - nombrePersonneMineurs}`)
+let nombrePersonneMineurs2 = personnes.reduce((nbMineursMajeurs,personne) => {
+    //if (personne.age <18){
+    //    nbMineursMajeurs.mineur++
+    //}else {
+    //    nbMineursMajeurs.majeur++
+    //}
+    //#######################################################################################################################################################
+
+    // Utilisasion de ternaire
+
+    personne.age>=18 ? nbMineursMajeurs.majeur++ : nbMineursMajeurs.mineur
+    //        if   alors                       sinon
+
+    return nbMineursMajeurs
+},{mineur : 0,majeur : 0})
+
+console.log(nombrePersonneMineurs2)
+//console.log(`nombre de personnes majeurs = ${personnes.length - nombrePersonneMineurs}`)
 
 
 console.log("____________________________________________________________________________________________")
@@ -127,6 +143,8 @@ console.log("Vérifier si tout le monde est majeur")
 
 
 console.log(personnes.filter(personne => personne.age >= 18).length ===personnes.length)
+
+console.log(personnes.every(personne => personne.age >= 18))
 
 
 console.log("____________________________________________________________________________________________")
