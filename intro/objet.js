@@ -128,7 +128,7 @@ let nombrePersonneMineurs2 = personnes.reduce((nbMineursMajeurs,personne) => {
 
     // Utilisasion de ternaire
 
-    personne.age>=18 ? nbMineursMajeurs.majeur++ : nbMineursMajeurs.mineur
+    personne.age>=18 ? nbMineursMajeurs.majeur++ : nbMineursMajeurs.mineur++
     //        if   alors                       sinon
 
     return nbMineursMajeurs
@@ -158,6 +158,8 @@ console.log("Supprimer une personne spécifique par son nom")
 
 
 personnes = personnes.filter((personne) => personne.nom !== "Martin")
+
+// Faire avec un slice #############################################################################################################
 
 console.log(personnes)
 
